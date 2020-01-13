@@ -77,8 +77,11 @@ brew "perl"
 # Widely used CLI editors
 brew "vim", args: ['override-system-vi', 'with-python3']
 brew "neovim"
-brew "emacs", args: ['HEAD', 'use-git-head', 'cocoa', 'srgb']
-cask "emacs"
+
+# Regular emacs window does not behave properly. Use this port instead
+tap "railwaycat/emacsmacport"
+brew "emacs-mac"
+cask "emacs-mac"
 
 ### CLI UTILITIES
 brew "ack"                                  # Better grep
@@ -94,6 +97,7 @@ brew "elinks"                               # CLI web browser
 brew "fasd"                                 # Fasd offers quick access to files and directories
 brew "fd"                                   # Fast alternative to find
 brew "fdupes"                               # CLI duplicate finder
+brew "fping"                                # More usable ping
 brew "fzf"                                  # Fuzzy finder
 brew "fzy"                                  # Another Fuzzy finder
 brew "graphviz"                             # Graph visualization software
@@ -134,9 +138,9 @@ brew "unison"                               # Sync both ways folders
 brew "write-good"                           # CLI tool for technical writing
 brew "youtube-dl"                           # Download YouTube (and others) from CLI
 
-### chunkwm
-tap 'crisidev/homebrew-chunkwm'
-brew 'chunkwm'
+### yabai
+tap 'koekeishiya/formulae'
+brew 'koekeishiya/formulae/yabai'
 brew 'koekeishiya/formulae/skhd'
 
 ### MISC
@@ -184,8 +188,10 @@ cask "logitech-options"                     # Drivers for keyboard and mouse
 cask "logitech-unifying"                    # Drivers for keyboard and mouse
 cask "mactex"                               # LateX and TeX
 cask "malwarebytes"                         # Remove antimalware
+cask "mkvtoolnix"                           # GUI for mkvtoolnix
 cask "onyx"                                 # Tweak tool for OS
 cask "paintbrush"                           # MS paint equivalent
+cask "plex"                                 # Plex Media Player
 cask "scroll-reverser"                      # Tool to invert mousewheel scroll
 cask "selfcontrol"                          # Blacklisting websites
 cask "slack"                                # Slack client
@@ -204,9 +210,7 @@ cask "yubico-yubikey-manager"               # Manager for yubikeys
 cask "yubico-authenticator"                 # TOTP authenticator based on yubikeys
 # PAID Casks
 cask "bartender"                            # Groups menu bar items (PAID)
-cask "carbon-copy-cloner"                   # Bulk copy and image creation (PAID)
 cask "daisydisk"                            # Handy disk space analyzer (PAID)
-cask "paragon-ntfs"                         # NTFS write support (PAID)
 cask "vmware-fusion"                        # Full fledged user friendly VM (PAID)
 
 # Quick Look plugins
@@ -227,6 +231,7 @@ cask "qlmobi"
 cask "qladdict"
 
 # Fonts
+brew "font-fontawesome"
 tap 'caskroom/fonts'
 cask "font-anonymous-pro"
 cask "font-charter"
@@ -249,6 +254,11 @@ cask "font-source-sans-pro"
 cask "font-source-serif-pro"
 cask "font-terminus"
 cask "font-times-new-roman"
+cask "font-fantasque-sans-mono"
+cask "font-victor-mono"
+cask "font-cascadia"
+  ## Nerd fonts
+cask "font-meslo-nerd-font-mono"
 
 
 tap 'colindean/fonts-nonfree'
